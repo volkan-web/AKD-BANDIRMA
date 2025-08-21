@@ -68,13 +68,16 @@ const InterviewForm: React.FC<InterviewFormProps> = ({ customerId, onSubmit, onC
               <Target className="h-4 w-4 inline mr-1" />
               Görüşme Sonucu
             </label>
-            <input
-              type="text"
+            <select
               value={formData.outcome}
               onChange={(e) => setFormData(prev => ({ ...prev, outcome: e.target.value }))}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Örn: Kayıt oldu, Kursa kayıt olmayı düşünüyor, Fiyat bilgisi istedi, vb."
-            />
+            >
+              <option value="">Seçiniz...</option>
+              <option value="kayıt oldu">Kayıt oldu</option>
+              <option value="düşünecek">Düşünecek</option>
+              <option value="kayıt olmayı düşünmüyor">Kayıt olmayı düşünmüyor</option>
+            </select>
           </div>
 
           <div>
